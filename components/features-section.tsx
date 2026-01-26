@@ -34,6 +34,13 @@ const services = [
     description: "Extend your lifestyle outdoors with composite decking, patios, and outdoor kitchens.",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
   },
+  {
+    number: "05",
+    title: "Siding",
+    subtitle: "Installation",
+    description: "Enhance your home's curb appeal and protection with premium siding materials and expert craftsmanship.",
+    image: "/img/IMG-20260124-WA0084.jpg",
+  },
 ]
 
 export function FeaturesSection() {
