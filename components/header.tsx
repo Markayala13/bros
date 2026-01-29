@@ -30,14 +30,14 @@ export function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled
         ? 'bg-black/95 backdrop-blur-md py-4 shadow-sm'
-        : 'bg-black md:bg-transparent py-6'
+        : 'bg-black py-1'
     }`}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/logo/logo.png"
+              src="/logo/logo2.png"
               alt="Bros Home Remodeling LLC"
               width={480}
               height={160}
@@ -64,13 +64,13 @@ export function Header() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-6">
             <a 
-              href="tel:+13107175612" 
+              href="tel:+13177172197" 
               className={`flex items-center gap-2 text-xs tracking-wider transition-colors duration-500 ${
                 isScrolled ? 'text-white/70 hover:text-white' : 'text-white/70 hover:text-white'
               }`}
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>(310) 717-5612</span>
+              <span>(317) 717-2197</span>
             </a>
             <Button 
               className={`text-[10px] tracking-[0.2em] uppercase px-6 py-5 h-auto font-medium transition-all duration-500 ${
@@ -116,9 +116,9 @@ export function Header() {
                 <div className="mt-auto pb-8">
                   <div className="mb-8">
                     <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Contact</p>
-                    <a href="tel:+13107175612" className="flex items-center gap-3 text-foreground text-lg font-light">
+                    <a href="tel:+13177172197" className="flex items-center gap-3 text-foreground text-lg font-light">
                       <Phone className="w-4 h-4" />
-                      (310) 717-5612
+                      (317) 717-2197
                     </a>
                   </div>
                   

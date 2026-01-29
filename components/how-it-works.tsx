@@ -122,10 +122,10 @@ export function HowItWorks() {
           </a>
           <span className="text-background/40 text-sm">or</span>
           <a
-            href="tel:+13107175612"
+            href="tel:+13177172197"
             className="text-background/80 text-sm tracking-wider hover:text-[#f24d39] transition-colors duration-300"
           >
-            Call (310) 717-5612
+            Call (317) 717-2197
           </a>
         </motion.div>
       </div>

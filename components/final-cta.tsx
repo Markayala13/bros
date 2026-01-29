@@ -58,10 +58,10 @@ export function FinalCTA() {
                   Phone
                 </p>
                 <a 
-                  href="tel:+13107175612" 
+                  href="tel:+13177172197" 
                   className="font-serif text-2xl text-foreground hover:text-[#f24d39] transition-colors duration-300"
                 >
-                  (310) 717-5612
+                  (317) 717-2197
                 </a>
               </div>
               <div className="group">

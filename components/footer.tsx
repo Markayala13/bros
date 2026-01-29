@@ -37,7 +37,7 @@ export function Footer() {
           <div className="md:col-span-4">
             <div className="mb-6">
               <Image
-                src="/logo/logo.png"
+                src="/logo/logo2.png"
                 alt="Bros Home Remodeling LLC"
                 width={520}
                 height={180}
@@ -102,10 +102,10 @@ export function Footer() {
             </p>
             <div className="space-y-4">
               <a 
-                href="tel:+13107175612" 
+                href="tel:+13177172197" 
                 className="block text-background/60 hover:text-[#f24d39] transition-colors duration-300 text-[15px]"
               >
-                (310) 717-5612
+                (317) 717-2197
               </a>
               <a 
                 href="mailto:info@broshomeremodeling.com" 

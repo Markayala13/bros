@@ -5,6 +5,7 @@ import { FeaturesSection } from "@/components/features-section"
 import { SocialProof } from "@/components/social-proof"
 import { HowItWorks } from "@/components/how-it-works"
 import { GallerySection } from "@/components/gallery-section"
+import { VideoShowcase } from "@/components/video-showcase"
 import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
@@ -18,6 +19,7 @@ export default function Home() {
       <SocialProof />
       <HowItWorks />
       <GallerySection />
+      <VideoShowcase />
       <FinalCTA />
       <Footer />
     </main>

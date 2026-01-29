@@ -68,13 +68,13 @@ export function HeroSection() {
       ))}
 
       {/* Cinematic Overlays */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent z-10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-10" />
-      
+      <div className="absolute inset-0 bg-black/20 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15 z-10" />
+
       {/* Vignette Effect */}
       <div className="absolute inset-0 z-10" style={{
-        background: 'radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0,0,0,0.4) 100%)'
+        background: 'radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(0,0,0,0.2) 100%)'
       }} />
 
       {/* Horizontal Lines - Cinematic Frame */}
@@ -97,10 +97,10 @@ export function HeroSection() {
 
             {/* Main Title */}
             <div className={`transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h1 className="font-serif text-[clamp(3rem,10vw,8rem)] font-light text-white leading-[0.9] tracking-[-0.02em] mb-2">
+              <h1 className="font-serif text-[clamp(3rem,10vw,8rem)] font-light text-white leading-[0.9] tracking-[-0.02em] mb-2" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>
                 {slides[currentSlide].titleLine1}
               </h1>
-              <h1 className="font-serif text-[clamp(3rem,10vw,8rem)] font-light leading-[0.9] tracking-[-0.02em]">
+              <h1 className="font-serif text-[clamp(3rem,10vw,8rem)] font-light leading-[0.9] tracking-[-0.02em]" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>
                 <span className="text-white/90">{slides[currentSlide].titleLine2.split(' ')[0]}</span>
                 {slides[currentSlide].titleLine2.split(' ').length > 1 && (
                   <span className="text-[#f24d39] italic"> {slides[currentSlide].titleLine2.split(' ').slice(1).join(' ')}</span>
@@ -129,7 +129,7 @@ export function HeroSection() {
                 </Button>
                 
                 <a 
-                  href="tel:+13107175612" 
+                  href="tel:+13177172197" 
                   className="hidden lg:flex items-center gap-3 text-white/60 hover:text-white transition-colors group"
                 >
                   <span className="flex items-center justify-center w-14 h-14 border border-white/20 group-hover:border-[#f24d39] transition-colors">
@@ -137,7 +137,7 @@ export function HeroSection() {
                   </span>
                   <div className="text-sm">
                     <p className="text-white/40 text-xs tracking-wider uppercase mb-1">Call Us</p>
-                    <p className="font-light tracking-wide">(310) 717-5612</p>
+                    <p className="font-light tracking-wide">(317) 717-2197</p>
                   </div>
                 </a>
               </div>
