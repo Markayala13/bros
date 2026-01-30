@@ -37,7 +37,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/logo/logo2.png"
+              src="/logo/logo-v3.png"
               alt="Bros Home Remodeling LLC"
               width={480}
               height={160}

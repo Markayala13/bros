@@ -37,7 +37,7 @@ export function Footer() {
           <div className="md:col-span-4">
             <div className="mb-6">
               <Image
-                src="/logo/logo2.png"
+                src="/logo/logo-v3.png"
                 alt="Bros Home Remodeling LLC"
                 width={520}
                 height={180}

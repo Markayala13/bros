@@ -2,7 +2,7 @@
 
 export function VideoShowcase() {
   const videos = [
-    { id: "szVMwbYYebc", title: "Bathroom" },
+    { id: "EC5w8TeGlWE", title: "Bathroom" },
     { id: "jRXKR_Gfwt0", title: "Kitchen" },
     { id: "Z7qvoPJ1AKE", title: "Living Room" },
   ]
