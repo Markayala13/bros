@@ -13,12 +13,50 @@ export function FinalCTA() {
     message: "",
   })
   const [focusedField, setFocusedField] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log(formData)
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          project: formData.project,
+          message: formData.message,
+          subject: `New Quote Request from ${formData.name}`,
+          from_name: "Bros Home Remodeling Website",
+        }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", phone: "", project: "", message: "" })
+        setTimeout(() => setSubmitStatus("idle"), 5000)
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const inputClasses = "w-full bg-transparent border-b border-border py-4 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-[#f24d39] transition-colors duration-300 text-[15px]"
@@ -68,11 +106,11 @@ export function FinalCTA() {
                 <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground font-medium mb-2">
                   Email
                 </p>
-                <a 
-                  href="mailto:info@broshomeremodeling.com" 
+                <a
+                  href="mailto:info@broshomerjc.com"
                   className="font-serif text-2xl text-foreground hover:text-[#f24d39] transition-colors duration-300"
                 >
-                  info@broshomeremodeling.com
+                  info@broshomerjc.com
                 </a>
               </div>
               <div>
@@ -227,15 +265,40 @@ export function FinalCTA() {
 
                 <button
                   type="submit"
-                  className="group w-full bg-[#f24d39] text-white py-5 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#d60000] transition-colors duration-300 flex items-center justify-center gap-3 mt-8"
+                  disabled={isSubmitting}
+                  className="group w-full bg-[#f24d39] text-white py-5 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#d60000] transition-colors duration-300 flex items-center justify-center gap-3 mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Request
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                  {isSubmitting ? "Sending..." : "Submit Request"}
+                  {!isSubmitting && (
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                  )}
                 </button>
 
-                <p className="text-xs text-center text-muted-foreground mt-4">
-                  Your information is secure and will never be shared.
-                </p>
+                {submitStatus === "success" && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-sm text-center text-green-600 mt-4 font-medium"
+                  >
+                    ✓ Message sent successfully! We&apos;ll contact you soon.
+                  </motion.p>
+                )}
+
+                {submitStatus === "error" && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-sm text-center text-red-600 mt-4 font-medium"
+                  >
+                    ✗ Something went wrong. Please try again or call us directly.
+                  </motion.p>
+                )}
+
+                {submitStatus === "idle" && (
+                  <p className="text-xs text-center text-muted-foreground mt-4">
+                    Your information is secure and will never be shared.
+                  </p>
+                )}
               </form>
             </div>
           </motion.div>

@@ -131,11 +131,11 @@ export function Footer() {
               >
                 (317) 717-2197
               </a>
-              <a 
-                href="mailto:info@broshomeremodeling.com" 
+              <a
+                href="mailto:info@broshomerjc.com"
                 className="block text-background/60 hover:text-[#f24d39] transition-colors duration-300 text-[15px]"
               >
-                info@broshomeremodeling.com
+                info@broshomerjc.com
               </a>
               <p className="text-background/60 text-[15px]">
                 Greater Indianapolis Area<br />
